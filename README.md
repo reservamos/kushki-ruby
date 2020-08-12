@@ -1,43 +1,77 @@
-# Kushki::Ruby
+# kushky-ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kushki/ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a gem for the kushki api for ruby.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'kushki-ruby'
+gem 'kushki-ruby', git: 'https://github.com/reservamos/kushki-ruby', tag: 'v0.1.0'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install kushki-ruby
-
 ## Usage
 
-TODO: Write usage instructions here
+Right now there are only 2 api methods implemented: charge and refund.
 
-## Development
+To use this gem
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```
+require 'kushki'
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+client = Kushki.new YOUR_PRIVATE_MERCHANT_ID
+
+```
+
+### CHARGE:
+
+charge receives charge attributes detailed in https://docs.kushkipagos.com/api-reference/card/charge as parameters.
+
+```
+response = client.charge({ token: "1as123klsad123, ... })
+```
+
+charge response current supported attributes:
+
+```
+  ticket_number
+  approval_code
+  masked_card_number
+  card_holder_name
+  card_type
+  issuing_bank
+  payment_brand
+  raw
+```
+
+### REFUND
+
+refund receives the ticket_number received from the charge response.
+
+```
+response = client.refund "12312313123"
+```
+
+refund response current supported attributes:
+
+```
+  ticket_number
+```
+
+### Error handling
+
+when api returns an error 400, a TransactionError exception is raised.
+when api return an error 500, a RequestError exception is raised.
+when communication to api timeouts or fails, an UnavailableError is raised.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/kushki-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/kushki-ruby.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Kushki::Ruby project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/kushki-ruby/blob/master/CODE_OF_CONDUCT.md).
