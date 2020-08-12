@@ -64,9 +64,9 @@ refund response current supported attributes:
 
 ### Error handling
 
-when api returns an error 400, a TransactionError exception is raised.
-when api return an error 500, a RequestError exception is raised.
-when communication to api timeouts or fails, an UnavailableError is raised.
+- when api returns an error 400, a TransactionError exception is raised.
+- when api return an error 500, a RequestError exception is raised.
+- when communication to api timeouts or fails, an UnavailableError is raised.
 
 ## Contributing
 
