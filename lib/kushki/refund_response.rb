@@ -1,3 +1,5 @@
+require 'yaml'
+
 class Kushki::RefundResponse
   attr_accessor :raw_response
 

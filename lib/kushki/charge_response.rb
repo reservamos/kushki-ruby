@@ -1,3 +1,5 @@
+require 'yaml'
+
 class Kushki::ChargeResponse
   attr_accessor :raw_response, :details
 

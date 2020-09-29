@@ -10,7 +10,7 @@ class Kushki
   end
 
   def charge attributes
-    kuski_request do
+    kushki_request do
       url = "#{base_url}/card/v1/charges"
       response = post(url, attributes.to_json, headers)
       ChargeResponse.new(response)
@@ -18,14 +18,30 @@ class Kushki
   end
 
   def refund ticket_number
-    kuski_request do
+    kushki_request do
       url = "#{base_url}/v1/refund/#{ticket_number}"
       response = delete(url, headers)
       RefundResponse.new(response)
     end
   end
 
-  def kuski_request
+  def init_transfer attributes
+    kushki_request do
+      url = "#{base_url}/transfer/v1/init"
+      response = post(url, attributes.to_json, headers)
+      InitTransferResponse.new(response, attributes[:token])
+    end
+  end
+
+  def init_cash attributes
+    kushki_request do
+      url = "#{base_url}/cash/v1/charges/init"
+      response = post(url, attributes.to_json, headers)
+      InitCashResponse.new(response)
+    end
+  end
+
+  def kushki_request
     yield
   rescue RestClient::BadRequest => e
     raise TransactionError, e.response
@@ -61,6 +77,9 @@ end
 
 require 'kushki/charge_response'
 require 'kushki/refund_response'
+require 'kushki/init_transfer_response'
+require 'kushki/init_cash_response'
+require "kushki/transfer_in_webhook_response"
 require 'kushki/request_error'
 require 'kushki/transaction_error'
 require 'kushki/unavailable_error'

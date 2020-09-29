@@ -7,7 +7,7 @@ This is a gem for the kushki api for ruby.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'kushki-ruby', git: 'https://github.com/reservamos/kushki-ruby', tag: 'v0.1.0'
+gem 'kushki-ruby', git: 'https://github.com/reservamos/kushki-ruby', tag: 'v0.2.0'
 ```
 
 And then execute:
@@ -47,6 +47,16 @@ charge response current supported attributes:
   payment_brand
   raw
 ```
+
+### INIT_TRANSFER:
+
+TODO: Update this readme
+https://docs.kushkipagos.com/api-reference/transfer-in/transferininit
+
+### INIT_CASH
+
+TODO: Update this readme
+https://docs.kushkipagos.com/api-reference/cash-in/cashininit
 
 ### REFUND
 

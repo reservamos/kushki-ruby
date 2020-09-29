@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kushki-ruby (0.0.1)
+    kushki-ruby (0.0.2)
 
 GEM
   remote: https://rubygems.org/
