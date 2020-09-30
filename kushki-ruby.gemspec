@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
     "lib/kushki/refund_response.rb",
     "lib/kushki/init_transfer_response.rb",
     "lib/kushki/init_cash_response.rb",
-    "lib/kushki/transfer_in_webhook_response.rb",
+    "lib/kushki/transfer_in_response.rb",
     "lib/kushki/request_error.rb",
     "lib/kushki/transaction_error.rb",
     "lib/kushki/unavailable_error.rb"

@@ -33,6 +33,14 @@ class Kushki
     end
   end
 
+  def transfer_status token
+    kushki_request do
+      url = "#{base_url}/transfer/v1/status/#{token}"
+      response = get(url, headers)
+      TransferInResponse.new(response)
+    end
+  end
+
   def init_cash attributes
     kushki_request do
       url = "#{base_url}/cash/v1/charges/init"
@@ -64,9 +72,19 @@ class Kushki
     )
   end
 
-  def delete(url, headers)
+  def delete url, headers
     RestClient::Request.execute(
       method: :delete,
+      url: url,
+      timeout: nil,
+      verify_ssl: false,
+      headers: headers
+    )
+  end
+
+  def get url, headers
+    RestClient::Request.execute(
+      method: :get,
       url: url,
       timeout: nil,
       verify_ssl: false,
@@ -79,7 +97,7 @@ require 'kushki/charge_response'
 require 'kushki/refund_response'
 require 'kushki/init_transfer_response'
 require 'kushki/init_cash_response'
-require "kushki/transfer_in_webhook_response"
+require "kushki/transfer_in_response"
 require 'kushki/request_error'
 require 'kushki/transaction_error'
 require 'kushki/unavailable_error'

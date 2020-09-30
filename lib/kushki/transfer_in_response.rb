@@ -1,6 +1,6 @@
 require 'yaml'
 
-class Kushki::TransferInWebhookResponse
+class Kushki::TransferInResponse
   attr_accessor :raw_response
 
   def initialize raw_response
