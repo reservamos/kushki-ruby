@@ -6,11 +6,6 @@ class Kushki::TransferInResponse
   def initialize raw_response
     @raw_response = JSON.parse(raw_response.body)
   end
-
-  def processor_state
-    raw_response.fetch('processorState')
-  end
-
   
   def ticket_number
     raw_response.fetch('ticketNumber')
@@ -22,6 +17,10 @@ class Kushki::TransferInResponse
   
   def trazability_code
     raw_response.fetch('trazabilityCode')
+  end
+
+  def processor_state
+    raw_response['processorState']
   end
   
   def status
