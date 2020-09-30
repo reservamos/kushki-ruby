@@ -28,6 +28,10 @@ class Kushki::InitTransferResponse
     raw_response.fetch('bank_name')
   end
 
+  def ticket_number
+    raw_response.fetch('ticketNumber')
+  end
+
   def raw
     raw_response.to_yaml
   end
