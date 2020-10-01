@@ -39,6 +39,22 @@ class Kushki::TransferInResponse
     raw_response['amount']
   end
 
+  def pending?
+    processor_state == 'PENDING'
+  end
+
+  def ok?
+    processor_state == 'OK'
+  end
+
+  def not_authorized?
+    processor_state == 'NOT_AUTHORIZED'
+  end
+
+  def failed?
+    processor_state == 'FAILED'
+  end
+
   def raw
     raw_response.to_yaml
   end
