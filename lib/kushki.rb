@@ -97,8 +97,9 @@ require 'kushki/charge_response'
 require 'kushki/refund_response'
 require 'kushki/init_transfer_response'
 require 'kushki/init_cash_response'
-require "kushki/transfer_in_response"
-require 'kushki/cash_in_response'
+require "kushki/transfer_status_response"
+require 'kushki/cash_in_status'
+require 'kushki/transfer_in_status'
 require 'kushki/request_error'
 require 'kushki/transaction_error'
 require 'kushki/unavailable_error'

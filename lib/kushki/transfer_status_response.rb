@@ -1,6 +1,6 @@
 require 'yaml'
 
-class Kushki::TransferInResponse
+class Kushki::TransferStatusResponse
   attr_accessor :raw_response
 
   def initialize raw_response
