@@ -21,15 +21,15 @@ class Kushki::InitTransferResponse
   end
 
   def bank_id
-    raw_response.fetch('bank_id')
+    raw_response.fetch('bankId')
   end
 
   def bank_name
-    raw_response.fetch('bank_name')
+    raw_response.fetch('bankName')
   end
 
   def ticket_number
-    raw_response.fetch('ticketNumber')
+    raw_response['ticketNumber']
   end
 
   def raw

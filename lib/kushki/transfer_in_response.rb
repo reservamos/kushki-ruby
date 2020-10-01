@@ -8,7 +8,7 @@ class Kushki::TransferInResponse
   end
   
   def ticket_number
-    raw_response.fetch('ticketNumber')
+    raw_response['ticketNumber']
   end
   
   def bank_id
