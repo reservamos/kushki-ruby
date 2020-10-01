@@ -37,7 +37,7 @@ class Kushki
     kushki_request do
       url = "#{base_url}/transfer/v1/status/#{token}"
       response = get(url, headers)
-      TransferInResponse.new(response)
+      TransferStatusResponse.new(response)
     end
   end
 
