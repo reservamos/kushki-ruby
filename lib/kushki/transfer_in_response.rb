@@ -15,7 +15,7 @@ class Kushki::TransferInResponse
     raw_response.fetch('bankId')
   end
   
-  def trazability_code
+  def traceability_code
     raw_response.fetch('trazabilityCode')
   end
 

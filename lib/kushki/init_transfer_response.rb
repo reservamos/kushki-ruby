@@ -16,7 +16,7 @@ class Kushki::InitTransferResponse
     raw_response.fetch('redirectUrl')
   end
 
-  def trazability_code
+  def traceability_code
     raw_response.fetch('trazabilityCode')
   end
 
