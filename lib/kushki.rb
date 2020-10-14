@@ -1,8 +1,13 @@
 class Kushki
   attr_accessor :headers, :base_url
 
-  def initialize private_merchant_id
-    @base_url = "https://api-uat.kushkipagos.com"
+  def initialize private_merchant_id, is_prod
+    if is_prod
+      @base_url = "https://api.kushkipagos.com"
+    else
+      @base_url = "https://api-uat.kushkipagos.com"
+    end
+
     @headers = {
       "Private-Merchant-Id": private_merchant_id,
       "Content-Type": "application/json"
