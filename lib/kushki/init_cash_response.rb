@@ -35,7 +35,7 @@ class Kushki::InitCashResponse
     raw_response['pin']
   end
 
-  def agreementDetails
+  def agreement_details
     raw_response['agreementDetails']
   end
 
