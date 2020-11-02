@@ -7,7 +7,7 @@ This is a gem for the kushki api for ruby.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'kushki-ruby', git: 'https://github.com/reservamos/kushki-ruby', tag: 'v1.0.1'
+gem 'kushki-ruby', git: 'https://github.com/reservamos/kushki-ruby', tag: 'v1.0.2'
 ```
 
 And then execute:

@@ -17,6 +17,10 @@ class Kushki::CashInStatus
     params[:status]
   end
 
+  def completed_at
+    params[:completedAt]
+  end
+
   def approved?
     status == 'approvedTransaction'
   end

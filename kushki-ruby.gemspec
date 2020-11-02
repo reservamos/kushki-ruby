@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'kushki-ruby'
-  s.version     = '1.0.1'
+  s.version     = '1.0.2'
   s.date        = '2020-08-03'
   s.summary     = "Simple ruby client for kushky payment engine"
   s.authors     = ["Marcel Benitez"]
